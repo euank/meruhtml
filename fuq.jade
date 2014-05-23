@@ -1,0 +1,54 @@
+include config.jade
+doctype html
+html
+  head
+    title F.U.Q. - #{config.site_name}
+  body
+    include body_header.jade
+    +simple_header("Frequently Unasked Questions")
+
+    h2 F.U.Q
+    ol
+      li
+        h3 What is this? Why
+        p
+          | This is a small email server. It's for emails and stuff. Why not?
+      li
+        h3 How do I get an invite? Why invites?
+        p
+          | If you have to ask how to get an invite, you don't get one right now. Sorry.
+          | The restrictions are due to spam being a horrible problem for email servers
+          | and I don't want to deal with that.
+      li
+        h3 Gmail does that + thing. Do you have that?
+        p
+          | That's more properly called "subaddressing" or "address tags". And yes,
+          | we support that sucker like crazy. Except, because Google does a plus,
+          | we're doing a minus. As an example, if you email is "user@example.com",
+          | you also get "user-anything@example.com". Just "user-@example.com" won't work
+          | though. You can also login using "user-*@example.com" as your username to
+          | send email from any of your subaddresses. Phew, long answer.
+      li
+        h3 So, I have an account. How do I actually use it? Webmail?
+        p
+          | Webmail is coming, but not here yet. For now, just point your
+          | email client at us with the following configuration info:
+        p Incoming: IMAP at #{config.server_hostname} port 993 with SSL/TLS
+        p Outgoing: SMTP at #{config.server_hostname} port 587 with STARTTLS
+        p Username: user@#{config.mxdomain}
+          | <small><i>Make sure you include the domain</i></small>
+      li
+        h3 Self signed cert?
+        p Yup. Indeed it is. You may download it 
+          a(href="/cert.pem.txt") here
+          |  and add it to your client. We aren't paying money for a non-self-signed one,
+          | sorry. It's all a big scam anyways.
+      li
+        h3 I hear people talking about "hashbrowning the passwords" or something. Do you do that?
+        p Mmhmm. SHA512 with a salt. One day we might even make it this super cool powerful hash instead of "just" sha512.
+      li
+        h3 So, can I reset my password?
+        p
+          i Coming soon
+
+

@@ -1,0 +1,24 @@
+include config.jade
+include body_header.jade
+doctype html
+html
+  head
+    title Signup - #{config.site_name}
+  body
+    +simple_header("Signup")
+
+  h2 Invite
+  p
+    | So you want to invite a friend?
+    | Well, you're in luck (assuming you have an account).
+    | Just enter your account email, and we'll send you an invite link for your friend.
+  p
+    | Please only give this link to a
+    b trustworthy
+    | individual - The entire basis of this system is trust.
+    | If the person you invite spams or invites spammers, you might be liable as well.
+
+  label(for="addr") Your Email Address:
+  input(id="addr")
+  input(type='button',id="invite",value="click",name="fjfjf")
+  script(src="invite.js")

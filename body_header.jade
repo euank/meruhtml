@@ -1,0 +1,12 @@
+include config.jade
+mixin simple_header(title)
+  h1 #{config.site_name} #{title}
+  noscript
+    h2
+      | Javascript is required for some parts of the site. Check the source code if you're paranoid.
+      | Feel free to make the requests by hand.
+  h2
+    a(href="/signup.html") Signup
+  h2
+    a(href="/fuq.html") Frequently Unasked Questions
+  a(href="mailto:#{config.site_email}") Contact Us
