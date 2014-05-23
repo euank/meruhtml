@@ -1,17 +1,12 @@
-include config.jade
 include body_header.jade
-doctype html
-html
-  head
-    title Welcome - #{config.site_name}
-  body
-    +simple_header("Signup")
-  h2(id="invalid",class="hide") Invalid invite id. Please come back with a valid invite link if you want to signup
-  label(for="name") Email Address:
-  input(id="name")
-  span(id="domain",class="hide") @loading, please wait
-  br
-  label(for="password") Password:
-  input(type="password",id="password")
-  input(type="button",id="signup",value="click",name="fjfjf")
-  script(src="signup.js")
++simple_header("Signup")
+
+h2(id="invalid",class="hide") Invalid invite id. Please come back with a valid invite link if you want to signup
+label(for="name") Email Address:
+input(id="name")
+span(id="domain",class="hide") @loading, please wait
+br
+label(for="password") Password:
+input(type="password",id="password")
+input(type="button",id="signup",value="click",name="fjfjf")
+script(src="signup.js")

@@ -1,0 +1,21 @@
+include body_header.jade
++simple_header("Manage")
+
+#contentdiv
+  #loadingdiv
+    h1 Loading
+  #logindiv.hide
+    h2 Login
+    p You need to login to use this page
+    label(for="email") email:
+    input(id="email")
+    br
+    label(for="password") Password:
+    input(id="password",type="password")
+    br
+    input(type="button",value="click",id="loginbtn")
+  #managediv.hide
+    h2 Manage stuff
+
+
+  script(src="manage.js")

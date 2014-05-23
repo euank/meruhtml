@@ -1,0 +1,22 @@
+include config.jade
+include body_header.jade
+doctype html
+html
+  head
+    title Initial Setup - #{config.site_name}
+  body
+    label(for="domain") Mail Domain (e.g. example.com):
+    input(id="domain")
+    br
+    label(for="username") Admin Username (e.g. admin):
+    input(id="username")
+    br
+    label(for="password") Admin Password (e.g. swordfish):
+    input(type="password",id="password")
+    br
+    label(for="setup_pass") Setup pass:
+    input(id="setup_pass")
+    br
+    input(type="button",value="click",id="go")
+
+    script(src="initial_setup.js")
