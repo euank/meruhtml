@@ -5,16 +5,24 @@ mixin simple_header(title)
     head
       title #{title} - #{config.site_name}
       link(rel='stylesheet',href="meru.css")
+      link(rel="stylesheet",href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css")
     body
-      h1 #{config.site_name} #{title}
-      noscript
-        h2
-          | Javascript is required for some parts of the site. Check the source code if you're paranoid.
-          | Feel free to make the requests by hand.
-      h2
-        a(href="/signup.html") Signup
-      h2
-        a(href="/manage.html") Manage my Account
-      h2
-        a(href="/fuq.html") Frequently Unasked Questions
-      a(href="mailto:#{config.site_email}") Contact Us
+      #pagewrapper.l-box
+        h1 #{config.site_name} - #{title}
+        noscript
+          h2
+            | Javascript is required for some parts of the site. Check the source code if you're paranoid.
+            | Feel free to make the requests by hand.
+        #menu.pure-menu.pure-menu-open.pure-menu-horizontal
+          ul
+            li
+              a(href="/") Index
+            //li
+            //  a(href="/signup.html") Signup
+            li
+              a(href="/manage.html") Manage my Account
+            li
+              a(href="/fuq.html") Frequently Unasked Questions
+            li
+              a(href="mailto:#{config.site_email}") Contact Us
+        block
