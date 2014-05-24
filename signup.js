@@ -18,34 +18,6 @@ function setDomain(val) {
   d.classList.remove('hide');
 }
 
-function jsonRequest(type, url, data, cb) {
-  if(typeof data == "function") {
-    cb = data;
-    data = null;
-  }
-  var req = new XMLHttpRequest();
-  req.open(type, url, true);
-  req.onerror = function() {
-    cb("Connection error");
-  };
-  req.onload = function() {
-    if (req.status >= 200 && req.status < 400){
-      var data;
-      try {
-        data = JSON.parse(req.responseText);
-      } catch(ex) {
-        return cb(ex);
-      }
-      if(data.error) {
-        return cb(data.error);
-      }
-      return cb(null, data);
-    }
-  };
-  req.setRequestHeader('Content-Type', 'application/json');
-  req.send(data);
-}
-
 var q = queryObj();
 if(!q.invite) {
   setInvalid();
@@ -63,7 +35,7 @@ button.onclick = function() {
   var name = document.querySelector("#name").value;
   var invite = q.invite;
   var domain = q.domain;
-  jsonRequest('POST', '/api/account', JSON.stringify({invite: invite, user:name, password:pass, domain:domain}), function(err,res) {
+  jsonRequest('POST', '/api/account', {invite: invite, user:name, password:pass, domain:domain}, function(err,res) {
     if(err) {
       console.log(err);
       alert(err);

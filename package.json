@@ -1,0 +1,31 @@
+{
+  "name": "meruhtml",
+  "version": "0.0.0",
+  "description": "An html frontend to the meruapi backend for managing email server users",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jade": "~0.11.0",
+    "grunt-init": "~0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/euank/meruhtml.git"
+  },
+  "keywords": [
+    "email",
+    "meruhtml",
+    "meruapi"
+  ],
+  "author": "EuanK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/euank/meruhtml/issues"
+  },
+  "homepage": "https://github.com/euank/meruhtml"
+}

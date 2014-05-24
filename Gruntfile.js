@@ -2,13 +2,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jade: {
       compile: {
-        /*files: {
-          '_site/fuq.html': ['fuq.jade'],
-          '_site/index.html': ['index.jade'],
-          '_site/invite.html': ['invite.jade'],
-          '_site/signup.html': ['signup.jade'],
-          '_site/manage.html': ['manage.jade'],
-        }*/
         files: [
            {
              expand: true,
@@ -23,8 +16,19 @@ module.exports = function(grunt) {
            }
          ]
       }
+    },
+    concat: {
+      js: {
+        files: {
+          '_site/initial_setup.js': ['util_stuff.js', 'initial_setup.js'],
+          '_site/invite.js': ['util_stuff.js', 'invite.js'],
+          '_site/manage.js': ['util_stuff.js', 'manage.js'],
+          '_site/signup.js': ['util_stuff.js', 'signup.js'],
+        }
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.registerTask('default', ['jade']);
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.registerTask('default', ['jade', 'concat']);
 };

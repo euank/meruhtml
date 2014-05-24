@@ -2,3 +2,5 @@
 config.jade
 cert.pem
 cert.pem.txt
+_site
+node_modules
