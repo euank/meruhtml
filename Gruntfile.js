@@ -26,9 +26,16 @@ module.exports = function(grunt) {
           '_site/signup.js': ['util_stuff.js', 'signup.js'],
         }
       }
+    },
+    copy: {
+      main: {
+        src: '*.css',
+        dest: '_site/'
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.registerTask('default', ['jade', 'concat']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('default', ['jade', 'concat', 'copy']);
 };

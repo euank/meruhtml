@@ -83,7 +83,7 @@ document.querySelector("#changepassbtn").onclick = function() {
     qs("#oldpass").value = qs("#newpass").value = '';
   });
 };
-document.querySelector("invitebtn").onclick = function() {
+document.querySelector("#invitebtn").onclick = function() {
   jsonRequest('POST', '/api/invite', {email: getCookie("email")}, function(err, res) {
     if(err) {
       alert(err);
