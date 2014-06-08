@@ -21,12 +21,8 @@ function setDomain(val) {
 var q = queryObj();
 if(!q.invite) {
   setInvalid();
-} else {
-  jsonRequest('GET', '/api/domain?id=' + encodeURIComponent(q.domain), function(err, res) {
-    if(err) { console.log(err); return setInvalid(); }
-    setDomain(res.name);
-  });
-}
+} 
+setDomain(q.domain);
 
 var button = document.querySelector("#signup");
 
