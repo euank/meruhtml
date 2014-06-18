@@ -1,3 +1,6 @@
+
+Note, depreciated by [esk.email-html](https://github.com/euank/esk.email-html)!
+
 # meruhtml
 
 See also euank/meruapi
